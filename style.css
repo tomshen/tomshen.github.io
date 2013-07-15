@@ -2,13 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2rem;margin:.67rem 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1rem}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5rem}sub{bottom:-0.25rem}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35rem .625rem .75rem}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
 
 html, body {
-  font: normal 16px "Droid Sans", sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  color: #EEE;
+  font: 400 10px "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #DDD;
   text-align: center;
 
   height: 100%;
@@ -26,7 +24,7 @@ header {
 }
 
 h1 {
-  font: bold 6em "Montserrat", sans-serif;
+  font: bold 9.6rem "Montserrat", sans-serif;
   color: #FFF;
   margin: 0;
   text-align: center;
@@ -38,13 +36,13 @@ section {
 }
 
 #about {
-  font-size: 1.5em;
+  font-size: 2.4rem;
   width: 600px;
   display: inline-block;
 }
 
 ul {
-  font-size: 2em;
+  font-size: 3.2rem;
   list-style: none;
   text-align: center;
   position: relative;
@@ -68,7 +66,7 @@ li:last-child {
   bottom: 0;
   width: 100%;
   text-align: right;
-  font-size: 0.8em;
+  font-size: 1.2rem;
   opacity: 0.8;
 }
 
@@ -95,11 +93,15 @@ a:hover {
 
 @media (max-width: 520px) {
   #about {
-    font-size: 1.2em;
+    font-size: 2.0rem;
     width: 90%;
   }
   h1 {
-    font-size: 5em;
+    font-size: 8rem;
+  }
+
+  ul {
+    padding-top: 4em;
   }
   li {
     display: list-item;
@@ -109,28 +111,28 @@ a:hover {
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 4em;
+    font-size: 6rem;
   }
   ul {
-    font-size: 1.5em;
+    font-size: 2.4rem;
   }
 }
 
 @media (max-height: 640px) {
   ul {
-    padding: 3em 0 0 0;
+    padding: 3rem 0 0 0;
   }
 }
 
 @media (max-height: 500px) {
   ul {
-    padding: 1em 0 0 0;
+    padding: 2rem 0 0 0;
   }
 }
 
 @media (max-height: 450px) {
   section {
-    padding-bottom: 1.5em;
+    padding-bottom: 3rem;
   }
   #photo-credit {
     position: relative;
