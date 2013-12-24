@@ -2,49 +2,45 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tom Shen: software developer and CS major at Carnegie Mellon University">
   <title>Tom Shen</title>
-  <meta name="description" content="Software developer and computer science major at Carnegie Mellon University.">
-  <meta name="author" content="Tom Shen">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <!-- start Mixpanel -->
-  <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("7dca0d54c2caf7e5a45eeb7b83707b69");</script>
-  <!-- end Mixpanel -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:700,400,400italic">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <section>
-    <header>
-      <h1>Tom Shen</h1>
-    </header>
-    <div id="about">
-      Studying computer science and machine learning at Carnegie Mellon University. Formerly a software development intern at Bloomberg LP.
+  <header>
+    <div id="topbar">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <ul>
-      <li>
-        <a id="email" href="mailto:tom@shen.io">Email</a>
-      </li>
-      <li>
-        <a id="resume" href="http://dl.tomshen.me/resume.pdf">Résumé</a>
-      </li>
-      <li>
-        <a id="github" href="https://github.com/tomshen/">Github</a>
-      </li>
+    <h1>Tom Shen</h1>
+    <a href="mailto:tom@shen.io">tom at shen.io</a>
+    <ul id="nav">
+      <li><a class="active">About</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/writing.html">Writing</a></li>
     </ul>
-  </section>
-  <footer id="photo-credit">
-    Photo by <a href="http://www.flickr.com/photos/40495680@N00/4139400286">Sakeeb Sabakka</a>.
+  </header>
+  <article id="about">
+    <p>
+      I am an undergraduate at <a href="http://www.cs.cmu.edu/">Carnegie Mellon University</a> in Pittsburgh. I expect to graduate in May 2015 with a B.S. in Computer Science and a minor in Machine Learning.
+    </p>
+    <p>
+      Currently, I am working as a student researcher under <a href="http://www.cs.cmu.edu/~wcohen/">Professor William Cohen</a> of the Machine Learning Department in CMU's School of Computer Science. I work on projects related to <a href="http://rtw.ml.cmu.edu/rtw/">NELL</a>, a computer system that attempts to read the web.
+    </p>
+    <p>
+      This upcoming summer, I will be a <a href="http://kpcbfellows.com/">KPCB Engineering Fellow</a> and an intern with <a href="http://www.upthere.com/">UpThere</a> in Palo Alto.
+    </p>
+    <p>
+      In the past, I have worked as a software development intern at <a href="http://www.bloomberg.com/">Bloomberg</a> in New York, where I did full-stack web development on (now defunct) BloombergBlack, an online wealth management service.
+    </p>
+  </article>
+  <footer>
+    <div id="bottombar"></div>
   </footer>
-  <script type="text/javascript">
-    mixpanel.track('Page view');
-
-    document.getElementById('resume').addEventListener('click', function () {
-      mixpanel.track('Résumé view');
-    }, false);
-
-    document.getElementById('github').addEventListener('click', function () {
-      mixpanel.track('Github view');
-    }, false);
-  </script>
 </body>
 </html>

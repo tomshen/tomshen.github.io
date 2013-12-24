@@ -1,0 +1,116 @@
+// mixins
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+// variables
+$basecolor: #C22;
+
+* {
+  @include vendor-prefix("box-sizing", "border-box");
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #FCFCFC;
+  color: #111;
+  font: normal 20px Cardo, Georgia, serif;
+}
+
+header {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+#topbar {
+  display: block;
+  height: 0.5rem;
+  width: 100%;
+}
+#topbar * {
+  height: 0.75rem;
+}
+@for $bar from 1 through 3 {
+  #topbar :nth-child(#{$bar}) {
+    background-color: lighten($basecolor, $bar*5%);
+  }
+}
+#nav {
+  link-style: none;
+}
+#nav li {
+  display: inline-block;
+  padding-right: 3rem;
+}
+#nav li a {
+  color: #555;
+  font-weight: bold;
+  text-decoration: none;
+}
+#nav li a:hover {
+  color: darken(#555, 20%);
+}
+#nav li a.active {
+  color: lighten($basecolor, 10%);
+}
+
+#bottombar {
+  background-color: $basecolor;
+  height: 0.5rem;
+  margin: 2rem 0 0 0;
+}
+
+h1 {
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  margin-bottom: 0.25rem;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+article {
+  margin: 0 auto;
+  max-width: 35rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-top: 0rem;
+}
+
+a {
+  color: lighten($basecolor, 10%);
+}
+
+a:hover {
+  color: darken($basecolor, 20%);
+}
+
+@media (max-width: 640px) {
+  article {
+    padding: 0 1rem;
+  }
+
+  #nav li {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+  #nav li {
+    padding-right: 1.5rem;
+  }
+}
