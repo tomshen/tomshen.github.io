@@ -37,7 +37,7 @@ header {
 }
 @for $bar from 1 through 3 {
   #topbar :nth-child(#{$bar}) {
-    background-color: lighten($basecolor, $bar*5%);
+    background-color: lighten($basecolor, $bar*8%);
   }
 }
 #nav {

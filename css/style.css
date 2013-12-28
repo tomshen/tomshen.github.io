@@ -27,13 +27,13 @@ header {
   height: 0.75rem; }
 
 #topbar :nth-child(1) {
-  background-color: #dc2c2c; }
+  background-color: #de3939; }
 
 #topbar :nth-child(2) {
-  background-color: #df4242; }
+  background-color: #e45c5c; }
 
 #topbar :nth-child(3) {
-  background-color: #e35757; }
+  background-color: #ea7f7f; }
 
 #nav {
   link-style: none; }
