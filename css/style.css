@@ -73,6 +73,10 @@ article {
   max-width: 35rem; }
 
 p {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
   hyphens: auto;
   line-height: 1.5;
   margin-top: 0rem;
