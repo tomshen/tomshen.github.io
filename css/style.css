@@ -12,7 +12,7 @@ html, body {
 body {
   background-color: #FCFCFC;
   color: #111;
-  font: normal 20px Cardo, Georgia, serif; }
+  font: normal 30px Cardo, Georgia, serif; }
 
 header {
   text-align: center;
@@ -27,13 +27,13 @@ header {
   height: 0.75rem; }
 
 #topbar :nth-child(1) {
-  background-color: #de3939; }
+  background-color: #42d535; }
 
 #topbar :nth-child(2) {
-  background-color: #e45c5c; }
+  background-color: #62dc57; }
 
 #topbar :nth-child(3) {
-  background-color: #ea7f7f; }
+  background-color: #81e379; }
 
 #nav {
   link-style: none; }
@@ -51,10 +51,10 @@ header {
   color: #222222; }
 
 #nav li a.active {
-  color: #df4242; }
+  color: #2da523; }
 
 #bottombar {
-  background-color: #cc2222;
+  background-color: #33ba27;
   height: 0.5rem;
   margin: 2rem 0 0 0; }
 
@@ -70,17 +70,17 @@ h3 a {
 
 article {
   margin: 0 auto;
-  max-width: 35rem; }
+  max-width: 50rem; }
 
 p {
   line-height: 1.5;
   margin-top: 0rem; }
 
 a {
-  color: #df4242; }
+  color: #2da523; }
 
 a:hover {
-  color: #751313; }
+  color: #1c6615; }
 
 #email {
   text-decoration: none; }
@@ -91,9 +91,12 @@ a:hover {
 
   #nav li {
     padding-right: 2rem; } }
+@media (max-width: 480px) {
+  body {
+    font-size: 24px; } }
 @media (max-width: 400px) {
   body {
-    font-size: 16px; }
+    font-size: 20px; }
 
   #nav li {
     padding-right: 1.5rem; } }

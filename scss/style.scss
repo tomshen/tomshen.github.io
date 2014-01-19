@@ -6,7 +6,7 @@
 }
 
 // variables
-$basecolor: #C22;
+$basecolor: #33BA27;
 
 * {
   @include vendor-prefix("box-sizing", "border-box");
@@ -20,7 +20,7 @@ html, body {
 body {
   background-color: #FCFCFC;
   color: #111;
-  font: normal 20px Cardo, Georgia, serif;
+  font: normal 30px Cardo, Georgia, serif;
 }
 
 header {
@@ -56,7 +56,7 @@ header {
   color: darken(#555, 20%);
 }
 #nav li a.active {
-  color: lighten($basecolor, 10%);
+  color: darken($basecolor, 5%)
 }
 
 #bottombar {
@@ -80,7 +80,7 @@ h3 a {
 
 article {
   margin: 0 auto;
-  max-width: 35rem;
+  max-width: 50rem;
 }
 
 p {
@@ -89,7 +89,7 @@ p {
 }
 
 a {
-  color: lighten($basecolor, 10%);
+  color: darken($basecolor, 5%);
 }
 
 a:hover {
@@ -110,9 +110,15 @@ a:hover {
   }
 }
 
+@media (max-width: 480px) {
+  body {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 400px) {
   body {
-    font-size: 16px;
+    font-size: 20px;
   }
   #nav li {
     padding-right: 1.5rem;
