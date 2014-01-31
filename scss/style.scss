@@ -6,7 +6,7 @@
 }
 
 // variables
-$basecolor: #33BA27;
+$basecolor: #28A267;
 
 * {
   @include vendor-prefix("box-sizing", "border-box");
@@ -20,7 +20,7 @@ html, body {
 body {
   background-color: #FCFCFC;
   color: #111;
-  font: normal 30px Cardo, Georgia, serif;
+  font: normal 26px Cardo, Georgia, serif;
 }
 
 header {
@@ -100,7 +100,7 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 820px) {
   article {
     padding: 0 1rem;
   }
