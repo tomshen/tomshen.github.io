@@ -3,7 +3,6 @@ html, body {
   color: #DDD;
   font: 20px Raleway, sans-serif;
   letter-spacing: 0.05rem;
-  width: 100%;
 }
 
 header {
@@ -12,7 +11,9 @@ header {
 
 #name {
   color: #EEE;
-  font: 8rem bold 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;;
+  font-size: 8rem;
+  font-weight: bold;
   letter-spacing: 0;
   line-height: 75%;
   margin: 3rem 0;
