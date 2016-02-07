@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tom Shen</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=EB+Garamond">
-  <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-  <header>Tom Shen</header>
-  <nav>
-    <ul>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
       <li>
-        <a href="mailto:tom@shen.io"><i class="fa fa-envelope"></i></a>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
       </li>
-      <li>
-        <a href="https://twitter.com/tomshen"><i class="fa fa-twitter"></i></a>
-      </li>
-      <li>
-        <a href="https://pinboard.in/u:tomshen"><i class="fa fa-thumb-tack"></i></a>
-      </li>
-      <li>
-        <a href="http://coralium.tumblr.com/"><i class="fa fa-tumblr"></i></a>
-      </li>
-      <li>
-        <a href="https://github.com/tomshen"><i class="fa fa-github"></i></a>
-      </li>
-    </ul>
-  </nav>
-</body>
-</html>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
