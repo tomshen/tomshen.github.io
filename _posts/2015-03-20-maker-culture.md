@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Maker Culture"
+title: Maker Culture
 date: 2015-02-03T11:14:33-05:00
+categories: links
 ---
 
 # [Why I Am Not a Maker](http://www.theatlantic.com/technology/archive/2015/01/why-i-am-not-a-maker/384767/)
