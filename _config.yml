@@ -4,6 +4,7 @@ email: tom@shen.io
 description: >
   The personal site of Tom Shen, web developer.
 baseurl: ""
+permalink: none
 url: "http://www.tomshen.me"
 twitter_username: tomshen
 github_username:  tomshen
