@@ -11,4 +11,4 @@ Leonard Koren does a good job of stating wabi-sabi plainly and clearly. The basi
 
 ## 👎
 
-*Also posted on [Goodreads](https://www.goodreads.com/review/show/1598695786)*.
+*Also posted on [Goodreads](https://www.goodreads.com/review/show/1598695786).*

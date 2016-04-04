@@ -11,4 +11,4 @@ The introduction and copious notes are really good, but they do remove some of t
 
 ## 👍
 
-Also posted on [Goodreads](https://www.goodreads.com/review/show/1347001666)*
+*Also posted on [Goodreads](https://www.goodreads.com/review/show/1347001666).*
