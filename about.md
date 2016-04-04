@@ -6,6 +6,8 @@ permalink: /about/
 
 # Hi! I'm Tom Shen.
 
-I'm currently a software engineer at [Palantir](https://www.palantir.com), where I build products
-for the web. Previously, I've worked at [expii](https://www.expii.com),
-[Upthere](https://www.upthere.com), and [Bloomberg](http://www.bloomberg.com).
+![Me!](/assets/img/tom-shen.jpg){: .profile-picture }
+
+I'm a software engineer living in NYC. I enjoy drinking coffee and reading lots of books.
+
+Currently, I work at [Palantir](https://www.palantir.com). Previously, I've worked at [expii](https://www.expii.com), [Upthere](https://www.upthere.com), and [Bloomberg](http://www.bloomberg.com). I studied computer science and machine learning at [CMU](http://www.cmu.edu).
