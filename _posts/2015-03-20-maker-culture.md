@@ -5,9 +5,7 @@ date: 2015-02-03T11:14:33-05:00
 categories: links
 ---
 
-# [Why I Am Not a Maker](http://www.theatlantic.com/technology/archive/2015/01/why-i-am-not-a-maker/384767/)
-
-Debbie Chachra introduces the idea of "making" as a traditionally male domain. That's a really good point that I hadn't considered before, and the counterexamples proposed in the comments (cooking, homemaking) don't really hold up.
+Debbie Chachra [introduces the idea of "making" as a traditionally male domain](http://www.theatlantic.com/technology/archive/2015/01/why-i-am-not-a-maker/384767/). That's a really good point that I hadn't considered before, and the counterexamples proposed in the comments (cooking, homemaking) don't really hold up.
 
 However, I disagree with the central point of the article, that maker culture "risks ignoring those who teach, criticize, and take care of others."
 

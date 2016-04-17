@@ -193,6 +193,11 @@
     font-size: 24px;
 }
 
+.post-excerpt {
+    border-bottom: 1px $grey-color-light solid;
+    padding-bottom: 10px;
+}
+
 
 
 /**
@@ -238,7 +243,9 @@
             font-size: 18px;
         }
     }
+}
 
+.post-content, .post-excerpt {
     img {
         display: block;
         margin: 0 auto;
