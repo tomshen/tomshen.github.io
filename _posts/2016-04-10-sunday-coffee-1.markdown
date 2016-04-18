@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Weekly Links: April 4 to April 10"
+title: "Sunday Coffee #1"
 date: 2016-04-10T01:04:49-04:00
 categories: links
 ---
 
 I spend a lot of time reading stuff on the internet, and I often encounter really cool stuff that I want to share with other people. Rather than scattering these links between Pinboard, Tumblr and Twitter, I figured it would be nicer to collect them all in once place. Plus, I needed something to force me to post to this blog semi-regularly. Thus, here's some of the most interesting things I've read and/or seen on the internet this week:
+
+## Links
 
 - Old photographs of cities reshot today: [Paris](http://golem13.fr/paris-fenetres-histoire/) and [cities in China](http://petapixel.com/2016/04/09/reshot-old-photos-see-china-changed-100-years/).
 
