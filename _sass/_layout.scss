@@ -4,6 +4,7 @@
 .site-header {
     border-top: 5px solid $brand-color;
     border-bottom: 1px solid $grey-color-light;
+
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -11,29 +12,30 @@
 }
 
 .site-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 56px;
+    border-bottom: none;
+    color: $text-color;
+    font-size: 2 * $base-font-size;
+    line-height: 4 * $base-font-size;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+    &:hover {
+        color: $brand-color;
+        font-style: italic;
     }
 }
 
 .site-nav {
+    font-family: $header-font-family;
     float: right;
-    line-height: 56px;
+    line-height: 4 * $base-font-size;
 
     .menu-icon {
         display: none;
     }
 
     .page-link {
-        color: $text-color;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the last one
@@ -171,7 +173,7 @@
 }
 
 .page-heading {
-    font-size: 20px;
+    font-size: 3 * $base-font-size;
 }
 
 .post-list {
@@ -189,8 +191,7 @@
 }
 
 .post-link {
-    display: block;
-    font-size: 24px;
+    font-size: 2 * $base-font-size;
 }
 
 .post-excerpt {
@@ -250,14 +251,6 @@
     img {
         display: block;
         margin: 0 auto;
-    }
-
-    a {
-        border-bottom: 1px dotted;
-
-        &:hover {
-            text-decoration: none;
-        }
     }
 }
 
