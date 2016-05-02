@@ -1,6 +1,8 @@
 ---
 title: "Sunday Coffee #4"
 date: 2016-05-01T10:32:02-04:00
+layout: post
+categories: links
 ---
 
 This weekend was very exhausting, since a friend was visiting town, and we decided to walk from the middle of Brooklyn to the far side of Manhattan. I've also eaten more vegan meals than not this weekend. I miss meat.
