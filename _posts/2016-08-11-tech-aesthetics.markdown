@@ -8,6 +8,8 @@ I recently read an [article](http://www.theverge.com/2016/8/3/12325104/airbnb-ae
 
 > It’s the realm of coffee shops, bars, startup offices, and co-live / work spaces that share the same hallmarks everywhere you go: a profusion of symbols of comfort and quality, at least to a certain connoisseurial mindset. Minimalist furniture. Craft beer and avocado toast. Reclaimed wood. Industrial lighting. Cortados. Fast internet. The homogeneity of these spaces means that traveling between them is frictionless, a value that Silicon Valley prizes and cultural influencers like Schwarzmann take advantage of. Changing places can be as painless as reloading a website. You might not even realize you’re not where you started.
 
+<!--more-->
+
 The article mentions this, but I think modern lifestyle magazines are responsible for this as well. I touched on this in an [earlier post]({% post_url 2016-04-17-sunday-coffee-2 %}#kinfolk-and-the-desaturation-aesthetic), and I still mostly agree with what I said--this aesthetic is boring and bougie. But, it's also consistent and comfortable, and [cheap as fuck](https://www.metafilter.com/161423/AirSpace#6654764) (that MetaFilter thread has a lot of smug tech/millenial hatred, but also a lot of great discussion, including a nice diversion on Aldi).
 
 Plus, complaining that you see the same coffee shops and bars when you travel is a little silly, since it turns out the same things that appeal to people in their twenties with internet access in New York and San Francisco also tend to appeal to those around the world. [From the same MetaFilter thread](https://www.metafilter.com/161423/AirSpace#6655130):
