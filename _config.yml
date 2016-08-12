@@ -9,6 +9,10 @@ url: "http://www.tomshen.me"
 twitter_username: tomshen
 github_username:  tomshen
 
+gems:
+  - jekyll-paginate
+
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--more-->
+paginate: 5
