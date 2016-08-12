@@ -16,3 +16,4 @@ gems:
 markdown: kramdown
 excerpt_separator: <!--more-->
 paginate: 5
+paginate_path: /:num/
