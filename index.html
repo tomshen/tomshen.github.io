@@ -1,33 +1,17 @@
----
-layout: default
----
-
-<div class="home">
-  <div class="post-list">
-    {% for post in paginator.posts %}
-    <div>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <h2>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-      <div class="post-excerpt">
-        {{ post.excerpt }}
-      </div>
-    </div>
-    {% endfor %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-      {% else %}
-        <span class="previous">Previous</span>
-      {% endif %}
-      <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-      {% else %}
-        <span class="next ">Next</span>
-      {% endif %}
-    </div>
-  </div>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tom Shen</title>
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,700" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header><h1>Tom Shen</h1></header>
+        <img src="img/tom-shen.jpg" alt="Photo of Tom Shen" class="profile-picture">
+        <section>
+            <p>Hi! I'm <a href="mailto:tom@shen.io">Tom Shen</a>. I'm a <a href="https://www.github.com/tomshen">software engineer</a> interested in web development and machine learning.</p>
+            <p>I currently live in New York and work at <a href="https://www.palantir.com/">Palantir</a>.</p>
+        </section>
+    </body>
+</html>
