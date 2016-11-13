@@ -6,11 +6,11 @@ body {
   font-family: "Cormorant Garamond", Garamond, serif;
   font-size: 10px;
   font-weight: 500;
+  margin: 1rem 0;
 }
 
 header {
   color: #222;
-  margin-top: 2rem;
   text-align: center;
 }
 
