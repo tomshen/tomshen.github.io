@@ -9,7 +9,7 @@ fetch("http://wrzt.tomshen.me/")
             let section = document.getElementsByTagName("section")[0];
             let newParagraph = document.createElement("p");
             let newParagraphContent = document.createTextNode("I am currently in "
-                + city + ", " + country + ".");
+                + city + ".");
 
             newParagraph.appendChild(newParagraphContent);
             section.appendChild(newParagraph);  
