@@ -1,0 +1,17 @@
+title: Tom Shen
+description: >
+  Hi! I'm Tom Shen
+  I'm a software engineer interested in web development and machine learning.
+  I live in New York and work at Palantir.
+baseurl: ""
+url: "http://www.tomshen.me"
+permalink: /:year/:title/
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
