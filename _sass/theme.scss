@@ -1,4 +1,4 @@
-$screen-width-mobile: 480px;
+$screen-width-mobile: 800px;
 
 $color-text: #222;
 $color-link: #07D;
@@ -8,7 +8,7 @@ body {
     color: $color-text;
     display: flex;
     flex-direction: column;
-    font-family: "Cormorant Garamond", Garamond, serif;
+    font-family: sans-serif;
     font-size: 10px;
     font-weight: 500;
     margin: 1rem 0;
@@ -59,7 +59,7 @@ header {
         .site-title {
             color: inherit;
             cursor: inherit;
-            font-size: 8rem;
+            font-size: 4rem;
             font-weight: 700;
             margin: 0;
             text-decoration: inherit;
@@ -88,27 +88,39 @@ header {
 }
 
 article.home {
-    text-align: center;
+    display: flex;
+
+    @media (max-width: $screen-width-mobile) {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 1rem;
+
+        &:first-child {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        &:last-child {
+            flex: 2;
+            text-align: left;
+        }
+    }
 
     p {
-        font-size: 2rem;
+        font-size: 1.4rem;
         margin: 0;
         max-width: 100%;
-        text-align: center;
 
         & + p {
             margin-top: 1rem;
         }
-
-        @media (max-width: $screen-width-mobile) {
-            font-size: 1.6rem;
-        }
     }
 
     .profile-picture {
-        border-radius: 50%;
-        margin: 2rem 0 2.5rem 0;
-        max-width: 50%;
         width: 300px;
     }
 }
