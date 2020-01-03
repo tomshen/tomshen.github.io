@@ -4,7 +4,7 @@ description: >
   I'm a software engineer interested in web development and machine learning.
   I live in New York and work at Palantir.
 baseurl: ""
-url: "http://www.tomshen.me"
+url: "http://www.tomzshen.com"
 permalink: /:year/:title/
 
 # Build settings
