@@ -15,10 +15,13 @@ function createLightbox(imageElement) {
 
     const fullscreenImageElement = imageElement.cloneNode();
     fullscreenImageElement.classList.add(IMAGE_FULLSCREEN_CLASS);
-    fullscreenImageElement.onclick = () => {
+
+    const removeLightbox = () => {
         document.body.removeChild(backdropElement);
         document.body.removeChild(fullscreenImageElement);
-    }
+    };
+    backdropElement.onclick = removeLightbox;
+    fullscreenImageElement.onclick = removeLightbox;
 
     document.body.appendChild(backdropElement);
     document.body.appendChild(fullscreenImageElement);

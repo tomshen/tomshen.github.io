@@ -52,7 +52,7 @@ img.fullscreen {
     max-height: 96vh;
     max-width: 96vw;
 
-    margin: 2vh auto;
+    margin: auto;
 }
 
 .backdrop {
