@@ -1,10 +1,73 @@
+:root {
+    --main-color: #238e5a;
+}
+
 body {
     font-family: sans-serif;
     margin: 0 auto;
-    max-width: 640px;
+    max-width: 800px;
     padding: 30px;
 }
 
 p { 
     line-height: 1.5;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:active,
+a:hover {
+    color: var(--main-color);
+}
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+img {
+    cursor: zoom-in;
+
+    height: 100%;
+    max-width: 100%;
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
+img.fullscreen {
+    cursor: zoom-out;
+
+    z-index: 2;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    height: auto;
+    width: auto;
+
+    max-height: 96vh;
+    max-width: 96vw;
+
+    margin: 2vh auto;
+}
+
+.backdrop {
+    background: rgba(30, 30, 30, 0.9);
+
+    z-index: 1;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
