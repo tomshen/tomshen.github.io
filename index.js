@@ -1,5 +1,7 @@
 function initializeImageLightboxes() {
+    const IMAGE_LIGHTBOX_CLASS = "lightbox";
     Array.prototype.forEach.call(document.getElementsByTagName("img"), imageElement => {
+        imageElement.classList.add(IMAGE_LIGHTBOX_CLASS)
         imageElement.onclick = () => {
             createLightbox(imageElement);
         };

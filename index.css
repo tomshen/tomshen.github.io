@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
-
 body {
-    font-family: sans-serif;
+    color: #222;
+    font-family: -apple-system, sans-serif;
     margin: 0 auto;
     max-width: 800px;
     padding: 30px;
 }
 
 article {
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 p { 
@@ -26,20 +24,17 @@ a:hover {
     color: #238e5a;
 }
 
-figure {
-    margin-left: 0;
-    margin-right: 0;
-}
-
 img {
-    cursor: zoom-in;
-
     height: 100%;
     max-width: 100%;
 }
 
 header h1 a {
     text-decoration: none;
+}
+
+img.lightbox {
+    cursor: zoom-in;
 }
 
 img.fullscreen {
@@ -75,3 +70,18 @@ img.fullscreen {
     bottom: 0;
     right: 0;
 }
+
+.post-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post-list > li + li {
+    margin-top: 5px;
+}
+
+.post-list > li > :first-child {
+    margin-right: 20px;
+    width: 100px;
+}
+
