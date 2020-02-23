@@ -37,6 +37,14 @@ q:after {
     content: '”';
 }
 
+blockquote {
+    font-style: italic;
+}
+
+blockquote em {
+    font-style: normal;
+}
+
 header h1 a {
     text-decoration: none;
 }
