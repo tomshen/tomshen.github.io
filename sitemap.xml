@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.tomzshen.com/photos/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.tomzshen.com/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -27,10 +31,6 @@
   <url>
     <loc>https://www.tomzshen.com/blog/2020/01/this-site/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomzshen.com/photos/</loc>
   </url>
   
 </urlset>
