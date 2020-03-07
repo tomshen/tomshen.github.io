@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tom Shen</title>
-    <link>https://www.tomzshen.com/</link>
+    <link>https://www.tomzshen.com/blog/</link>
     <description>Recent content on Tom Shen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.tomzshen.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.tomzshen.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -39,15 +39,6 @@
       <description>Update (2020.03.07): This site now uses Hugo.
 This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.
 At first, I was just gonna use Jekyll, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.tomzshen.com/photos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tomzshen.com/photos/</guid>
-      <description> I post phone photos on Instagram.  Here are some photos that I&#39;ve taken:  Kyoto, 2019   Kyoto, 2019   Kyoto, 2019   Tokyo, 2019   Lausanne, 2018   Paris, 2018   Paris, 2018   Tokyo, 2017   Singapore, 2017   Singapore, 2017   Napa, 2017   Nanjing, 2017 </description>
     </item>
     
   </channel>
