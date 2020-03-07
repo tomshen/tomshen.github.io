@@ -36,7 +36,7 @@
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/01/this-site/</guid>
-      <description>Update (2020.03.07): This site now uses Hugo.
+      <description>Update (2020.03.07): This site now uses Hugo. Turns out having to manually sync head tags and nav between multiple pages is no fun. It&amp;rsquo;s crazy fast (compared to Jekyll), but somehow manages to be even more confusing to use.
 This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.
 At first, I was just gonna use Jekyll, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.</description>
     </item>
