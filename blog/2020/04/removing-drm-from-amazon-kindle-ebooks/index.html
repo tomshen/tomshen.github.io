@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Tom Shen — Removing DRM from Amazon Kindle ebooks</title>
+
+
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/css/index.css"><body><header><a href="/">Tom Shen</a></header><main>
+<article>
+    <header>Removing DRM from Amazon Kindle ebooks</header>
+    
+    <time datetime="2020-04-12T00:00:00Z">2020.04.12</time>
+    
+    <div>
+        <p>These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.</p>
+<ol>
+<li>Install <a href="https://calibre-ebook.com/">Calibre</a>. Calibre will be used to view the de-DRMed ebook and convert to other formats.</li>
+<li>Install the <a href="https://github.com/apprenticeharper/DeDRM_tools">DeDRM Calibre plugin</a>. This will be used to actually break the DRM on the ebooks.</li>
+<li>Install <a href="https://apps.apple.com/us/app/kindle/id405399194">Kindle.app</a>.</li>
+<li>Run <code>sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test</code> in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.</li>
+<li>Download an ebook via Kindle.app.</li>
+<li>Locate the <code>.azw</code> file for the ebook inside of <code>~/Library/Containers/com.amazon.Kindle/Data/Library/Application\ Support/Kindle/My\ Kindle\ Content</code>.</li>
+<li>Import this ebook file into Calibre. The ebook should now be viewable and converable.</li>
+</ol>
+
+    </div>
+</article>
+
+        </main><script src="/js/index.js"></script></body>
+</html>

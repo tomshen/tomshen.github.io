@@ -6,7 +6,7 @@
     <description>Recent content on Tom Shen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.tomzshen.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,16 @@
       
       <guid>https://www.tomzshen.com/photos/</guid>
       <description> I post phone photos on Instagram.  Here are some photos that I&#39;ve taken:  Kyoto, 2019   Kyoto, 2019   Kyoto, 2019   Tokyo, 2019   Lausanne, 2018   Paris, 2018   Paris, 2018   Tokyo, 2017   Singapore, 2017   Singapore, 2017   Napa, 2017   Nanjing, 2017 </description>
+    </item>
+    
+    <item>
+      <title>Removing DRM from Amazon Kindle ebooks</title>
+      <link>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</guid>
+      <description>These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.
+ Install Calibre. Calibre will be used to view the de-DRMed ebook and convert to other formats. Install the DeDRM Calibre plugin. This will be used to actually break the DRM on the ebooks. Install Kindle.app. Run sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.</description>
     </item>
     
     <item>
