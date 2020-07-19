@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Photos</title>
-      <link>https://www.tomzshen.com/photos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>https://www.tomzshen.com/blog/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.tomzshen.com/photos/</guid>
-      <description> I post phone photos on Instagram.  Here are some photos that I&#39;ve taken:  Kyoto, 2019   Kyoto, 2019   Kyoto, 2019   Tokyo, 2019   Lausanne, 2018   Paris, 2018   Paris, 2018   Tokyo, 2017   Singapore, 2017   Singapore, 2017   Napa, 2017   Nanjing, 2017 </description>
+      <guid>https://www.tomzshen.com/blog/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -26,8 +26,46 @@
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</guid>
-      <description>Roam Research allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.
-However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.&lt;/p&gt;
+&lt;p&gt;However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Use Roam Research JSON export metadata to set the correct file metadata on Roam
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Research Markdown export files.
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Usage
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  ./roam-export.py $EXPORT_JSON_FILE $EXPORT_MARKDOWN_DIRECTORY
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; json
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;process_roam_export&lt;/span&gt;(export_json_filename, export_markdown_folder):
+    export_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; import_export_json(export_json_filename)
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; note_data &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; export_data:
+        set_note_file_metadata(
+            os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(export_markdown_folder, note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;),
+            note_data)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;import_export_json&lt;/span&gt;(export_json_filename):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(export_json_filename) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; json&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;load(f)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;set_note_file_metadata&lt;/span&gt;(note_markdown_filename, note_data):
+    note_file_stat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stat(note_markdown_filename)
+    edit_time &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;edit-time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+    os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;utime(note_markdown_filename, (edit_time, edit_time))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Setting modification date of&amp;#39;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;,
+        datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;date&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fromtimestamp(edit_time)) 
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+    process_roam_export(sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;], sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -36,8 +74,17 @@ However, the JSON export for notes does have this metadata, so I wrote a small P
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</guid>
-      <description>These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.
- Install Calibre. Calibre will be used to view the de-DRMed ebook and convert to other formats. Install the DeDRM Calibre plugin. This will be used to actually break the DRM on the ebooks. Install Kindle.app. Run sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.</description>
+      <description>&lt;p&gt;These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://calibre-ebook.com/&#34;&gt;Calibre&lt;/a&gt;. Calibre will be used to view the de-DRMed ebook and convert to other formats.&lt;/li&gt;
+&lt;li&gt;Install the &lt;a href=&#34;https://github.com/apprenticeharper/DeDRM_tools&#34;&gt;DeDRM Calibre plugin&lt;/a&gt;. This will be used to actually break the DRM on the ebooks.&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://apps.apple.com/us/app/kindle/id405399194&#34;&gt;Kindle.app&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test&lt;/code&gt; in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.&lt;/li&gt;
+&lt;li&gt;Download an ebook via Kindle.app.&lt;/li&gt;
+&lt;li&gt;Locate the &lt;code&gt;.azw&lt;/code&gt; file for the ebook inside of &lt;code&gt;~/Library/Containers/com.amazon.Kindle/Data/Library/Application\ Support/Kindle/My\ Kindle\ Content&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Import this ebook file into Calibre. The ebook should now be viewable and convertable.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
@@ -46,8 +93,47 @@ However, the JSON export for notes does have this metadata, so I wrote a small P
       <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/03/notes-on-the-death-and-life-of-great-american-cities/</guid>
-      <description>Disclaimer: this is feature complete, but needs revision.
- The Death and Life of Great American Cities (1961) by Jane Jacobs  The Peculiar Nature of Cities What makes neighborhoods safe and unsafe? The answer is generally not the presence of police (a neighborhood where you frequently see police officers is certainly not a safe neighborhood). Instead, neighborhoods depend on having people watching the street. These people can be hired (e.</description>
+      <description>&lt;p&gt;Disclaimer: this is &lt;q&gt;feature complete,&lt;/q&gt; but needs revision.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474660820l/18191035._SY475_.jpg&#34; alt=&#34;The Death and Life of Great American Cities&#34;&gt;
+    &lt;figcaption&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/18191035-the-death-and-life-of-great-american-cities&#34;&gt;&lt;cite&gt;The Death and Life of Great American Cities&lt;/cite&gt;&lt;/a&gt; (1961) by Jane Jacobs&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h1 id=&#34;the-peculiar-nature-of-cities&#34;&gt;The Peculiar Nature of Cities&lt;/h1&gt;
+&lt;p&gt;What makes neighborhoods safe and unsafe? The answer is generally not the presence of police (a neighborhood where you frequently see police officers is certainly not a safe neighborhood). Instead, neighborhoods depend on having people watching the street. These people can be hired (e.g. doormen), or they can be people who run or work at businesses on the street (e.g. owners/workers at bodegas that are open all night long), or they can be people who live in the neighborhood and, critically, are interested in watching the street.&lt;/p&gt;
+&lt;p&gt;Generally, safe neighborhoods are due to a combination of the last two, and they&amp;rsquo;re connected. Why do people watch the street? When there&amp;rsquo;s a lot of other people in the street. People are in the street when there&amp;rsquo;s something drawing them to or through the neighborhood. This is where mixed use zoning and density come in: the more there is to draw people to the streets that people also live in, the safer they&amp;rsquo;ll be. Also, somewhat ironically, the more strangers frequent a street, the safer it is.&lt;/p&gt;
+&lt;p&gt;Today, New York (and cities in the US in general) are a lot safer than they used to be (e.g. when this book was written). Manhattan in particular is a lot safer. However, as far as I can tell very few neighborhoods in Manhattan have the sort of neighborhood feel that Jacobs describes. So, why have they become more safe?&lt;/p&gt;
+&lt;p&gt;A related tidbit that caught my eye: neighborhoods that are filled with high end residential buildings are kept safe primarily through a &lt;q&gt;network of doormen and superintendents, of delivery boys and nursemaids, a form of hired neighborhood.&lt;/q&gt; Since residents of high-rent neighborhoods don&amp;rsquo;t actually spend much time in their neighborhoods, part of their rent goes towards a &amp;ldquo;fake&amp;rdquo; neighborhood infrastructure. In that sense, should we be more suspicious of doorman buildings? (I currently live in a doorman building.)&lt;/p&gt;
+&lt;p&gt;How do we deal with unsafe cities?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[One] mode is to take refuge in vehicles. This is a technique practiced in the big wild-animal reservations of Africa, where tourists are warned to leave their cars under no circumstances until they reach a lodge. It is also the technique practiced in Los Angeles. Surprised visitors to that city are forever recounting how the police of Beverly Hills stopped them, made them prove their reasons for being afoot, and warned them of the danger. This technique of public safety does not seem to work too effectively yet in Los Angeles, as the crime rate shows, but in time it may. And think what the crime figures might be if more people without metal shells were helpless upon the vast, blind-eyed reservation of Los Angeles.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The other modes, of course, are to simply let residents deal with it, or to establish turfs. Turfs are sometimes actually maintained by gangs, but walled off parts of the city and gated communities create their own turfs.&lt;/p&gt;
+&lt;p&gt;Parks and playgrounds and other artificially constructed spaces are bad for public/street life. They force &amp;ldquo;togetherness&amp;rdquo; instead of allowing it to occur naturally, and, if not properly supplemented with commercial, &amp;ldquo;public&amp;rdquo; areas, can do damage to their neighborhoods. If children play in parks instead of city sidewalks, they lose the presence and watchful eyes of adults who naturally frequent the street, or look out their windows at the street. Any hired supervision naturally cannot compare with the sheer amount of adult supervision a street provides for free, &lt;q&gt;in the course of carrying on their other pursuits.&lt;/q&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Planners do not seem to realize how high a ratio of adults is needed to rear children at incidental play. Nor do they seem to understand that spaces and equipment do not rear children. These can be useful adjuncts, but only people rear children and assimilate them into civilized society.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Jacobs theorizes that an important part of good neighborhoods is the separation between public and private life. Through the presence of public spaces where people interact, the neighborhood as a whole builds a sense of community and responsibility, even if direct private personal interactions are rare. Part of why housing projects fail (as opposed to the &amp;ldquo;slums&amp;rdquo; that they claim to replace) is that they blur the lines between these two spaces.&lt;/p&gt;
+&lt;p&gt;Despite the village ostensibly being safer today than it ever was (and certainly being a lot more high-end/expensive), I don&amp;rsquo;t think I would ever let my (hypothetical) kids play alone on the streets.&lt;/p&gt;
+&lt;h1 id=&#34;the-conditions-for-city-diversity&#34;&gt;The Conditions for City Diversity&lt;/h1&gt;
+&lt;p&gt;Before my current apartment, I lived for year in FiDi. The apartment was large (2000 ft&lt;sup&gt;2&lt;/sup&gt; for 4 people), reasonably priced, and in a luxury building with great amenities. I was also very excited to get out of the neighborhood. FiDi is filled with great apartments, but it&amp;rsquo;s also totally empty at night and on weekends. The same problems that were observed during the 50s were present today. Mixed-use midtown is the real downtown of New York.&lt;/p&gt;
+&lt;h1 id=&#34;forces-of-decline-and-regeneration&#34;&gt;Forces of Decline and Regeneration&lt;/h1&gt;
+&lt;p&gt;Gentrification can be bad not just because it pushes out long-standing residents in favor of wealthier ones, who will contribute nothing to the local culture: it can be bad because it pushes out mixed use with pure residential (usually high end). A mixed use area becomes popular, and therefore lots of well-off single people want to move in, and the construction of new luxury buildings will therefore push out the lower-cost, older buildings and the shops and residents that occupied them. This is certainly something that has and is happening in Chelsea (where even the art galleries have become too expensive for normal artists to show their work).&lt;/p&gt;
+&lt;p&gt;The boundaries between neighborhoods can often be much worse than either surround neighborhood (e.g. adjacent to highways/railroad tracks, waterfronts, the streets adjacent to Central Park). This is the case when there is no good reason to cross the boundary, or at least approach it. When there are places established at those boundaries that people would want to go to (e.g. the museums along the eastern edge of Central Park), people will naturally cross the boundaries as well, and the whole strip of land will be healthy.&lt;/p&gt;
+&lt;h1 id=&#34;different-tactics&#34;&gt;Different Tactics&lt;/h1&gt;
+&lt;p&gt;Why must subsidized housing in cities be treated differently than other enterprises subsidized by the government? Nothing differentiates those that must live in subsidized housing from any other resident, except their ability to pay for housing.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Perfectly ordinary housing needs an be provided for almost anybody by private enterprise. What is peculiar about these people is merely that &lt;em&gt;they cannot pay for it&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Quicker than the eye can see, however, &lt;q&gt;people who cannot be housed by private enterprise&lt;/q&gt; have been turned into a statistical group with peculiar shelter requirements, like prisoners, on the basis of one statistic: their income.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pedestrian-only streets are not beneficial because they enable more people to fit, but rather because it makes crossing the street safer and easier.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When opportunity affords, I have been watching how people use pedestrian streets. They do not sally out in the middle and glory in being kings of the road at last. They stay to the sides.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Cars in cities are bad because they lead to a compounding cycle: more cars means more space for parking, which spreads out places of interest even further, which makes more necessary to get around and makes most streets less interesting.&lt;/p&gt;
+&lt;p&gt;In the opposite direction, attrition of automobiles occurs when roads are closed to cars (like the recent experiment on 14th St), or when pedestrians are present in such numbers to make driving difficult. This is the only way to reduce the number of cars in a city, and it must work slowly and gradually.&lt;/p&gt;
+&lt;p&gt;What kind of problem is a city? A city is a problem of &lt;em&gt;organized complexity&lt;/em&gt;. Previous schools of thought about cities have though of them as problems of &lt;em&gt;simplicity&lt;/em&gt; (two-variable systems) or &lt;em&gt;disorganized complexity&lt;/em&gt; (systems that may only be analyzed statistically).&lt;/p&gt;
+&lt;p&gt;&lt;q&gt;Unaverage&lt;/q&gt; elements, large and small, are critical to vital cities. They are widely, unconsciously understood by city dwellers, but dismissed by city planners as inconsequential, because they are statistically so.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -56,7 +142,96 @@ However, the JSON export for notes does have this metadata, so I wrote a small P
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/01/backpacks/</guid>
-      <description>(Disclaimer: this is an unedited rough draft.)  I promised to not write about backpacks, but here we are. Let&#39;s just get all of this out of my system now so that I never have to write about backpacks again. I&#39;m going to talk about backpacks that I use, backpacks that I recommend, and backpacks that I do not.  I&#39;m mostly interested in bags that are useful for EDC and for one-bag urban travel.</description>
+      <description>&lt;p&gt;
+    (Disclaimer: this is an unedited rough draft.)
+&lt;/p&gt;
+&lt;p&gt;
+    I promised to not write about backpacks, but here we are. Let&#39;s just get all of this out of my system now so that I never have to write about backpacks again. I&#39;m going to talk about backpacks that I use, backpacks that I recommend, and backpacks that I do not.
+&lt;/p&gt;
+&lt;p&gt;
+    I&#39;m mostly interested in bags that are useful for EDC and for one-bag urban travel. There&#39;s definitely a lot of other use cases out there (in particular bags for hiking and other outdoor activities), but I don&#39;t feel like I have enough experience in other areas to talk about them.
+&lt;/p&gt;
+&lt;p&gt;
+    I&#39;ve spent a lot of time thinking about bags because I used to travel a ton, both for work and fun. I don&#39;t quite buy all the &lt;a href=&#34;https://www.reddit.com/r/onebag/&#34;&gt;one-bag&lt;/a&gt; gospel about how essential traveling with one expensive backpack is, but I do enjoy having a nice piece of gear that&#39;s easy to pack and use.
+&lt;/p&gt;
+&lt;p&gt;
+    One trend that I particularly dislike is bags that are over 30L in size. At that size, you&#39;re essentially carrying a suitcase on your back. And, if you take advantage of all that space, your bag will almost be way too heavy to comfortably carry. Either pack less or bring an additional duffel/suitcase.
+&lt;/p&gt;
+&lt;p&gt;
+    Conversely, one feature I find missing from a lot of bags is a dedicated water bottle pocket. Water bottles are often one of the heaviest and bulkiest items in a backpack, and not having a dedicated pocket for them means that they will either cause a weight imbalance in the bag and/or be hard to retrieve from the bag without needing to take everything out.
+&lt;/p&gt;
+&lt;h3&gt;
+    Bags that I currently use
+&lt;/h3&gt;
+&lt;h4&gt;
+    &lt;a href=&#34;https://www.tombihn.com/products/synapse-25&#34;&gt;Tom Bihn Synapse 25&lt;/a&gt;
+&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://cdn.shopify.com/s/files/1/1089/8530/products/Synapse-25-Black_1024x1024.jpg&#34; alt=&#34;Synapse 25&#34;&gt;
+    &lt;figcaption&gt;The Synapse 25&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+    This is my everything-but-EDC bag. I use this for pretty much all my travel, and it works as a one-bag solution for personal travel for any amount of time and for business travel for up to a week.
+&lt;/p&gt;
+&lt;p&gt;
+    The Synapse has been superseded by the Tom Bihn Synik, and the Synik is better in many ways: dedicated laptop compartment, better straps, luggage pass-through.
+&lt;/p&gt;
+&lt;p&gt;
+    However, I find the Synapse 25 a lot more versatile than the Synik 22 or 30: the size is just right, and the center water bottle pocket is substantially larger, which means it can be used for both a water bottle and electronics (Kindle, Switch, iPad Mini) for a flight.
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a href=&#34;https://www.tombihn.com/products/luminary-15&#34;&gt;Tom Bihn Luminary 15&lt;/a&gt;
+&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://cdn.shopify.com/s/files/1/1089/8530/products/TB0108-BK1_1024x1024.jpg&#34; alt=&#34;Luminary&#34;&gt;
+    &lt;figcaption&gt;The Luminary 15&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+    This is my EDC bag. I use a 13&#34; laptop for work, so it fits cleanly in the laptop compartment. Unlike the Synapse or the Synik, the zippers are only visible from the side, so it looks a lot sleeker.
+&lt;/p&gt;
+&lt;p&gt;
+    In an ideal world, I would like to use the same bag for EDC as I do for travel, but since I already own this and the Synapse 25, I might as well use this bag so that my EDC is as small and light as possible. In particular, I find it might easier to keep this bag on my back when taking the subway or a bus, whereas with the Synapse I usually have to take it off to avoid smacking the people standing behind me.
+&lt;/p&gt;
+&lt;h3&gt;
+    Other bags that I recommend
+&lt;/h3&gt;
+&lt;h4&gt;
+    &lt;a href=&#34;https://www.tombihn.com/products/synik-22?variant=15334728073279&#34;&gt;Tom Bihn Synik 22&lt;/a&gt;
+&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://cdn.shopify.com/s/files/1/1089/8530/products/Synik22_Black_side_1024x1024.jpg&#34; alt=&#34;Synik 22&#34;&gt;
+    &lt;figcaption&gt;The Synik 22&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+    If I had to start from scratch today, I would buy a Synik 22. It&#39;s somewhat overbuilt and kinda ugly, but it has the perfect pocket setup and can cover pretty much any travel situation.
+&lt;/p&gt;
+&lt;p&gt;
+    Using something like the Synik for anything beyond a weekend trip takes a certain minimalist mindset when it comes to packing. But, fully packed, it&#39;s probably about as much weight as you&#39;d want to carry on your back anyways for long periods of time.
+&lt;/p&gt;
+&lt;p&gt;
+    The main flaw with this back is the laptop compartment&#39;s size. Despite the bag&#39;s size, the compartment cannot fit a 15&#34; laptop, which means you need to carry them in the main compartment. The larger Synik (the Synik 30) can fit 15&#34; laptops (and even the new 16&#34; MBP), but it&#39;s so large that it&#39;s unusable for EDC.
+&lt;/p&gt;
+&lt;h3&gt;
+    Bags that I do not recommend
+&lt;/h3&gt;
+&lt;h4&gt;
+    GORUCK GR1 26L
+&lt;/h4&gt;
+&lt;p&gt;
+    The GR1 looks good and feels good while you&#39;re wearing it. It&#39;s also really easy to pack, since it&#39;s just one big compartment. However, it&#39;s very heavy, the fabric is rough enough to tear clothing, Plus, there&#39;s only one external pocket, and it&#39;s hard to keep anything that&#39;s not book/tablet sized in there, because everything ends up at the bottom, and everything in the pocket bulges out. There&#39;s also no good place for a water bottle, since it&#39;s too easy to loose the water bottle in the main compartment, and the external pocket is useless.
+&lt;/p&gt;
+&lt;h4&gt;
+    Tom Bihn Aeronaut 45
+&lt;/h4&gt;
+&lt;p&gt;
+    The Aeronaut has a great pocket setup, and the 30 seems to be a really nice bag, but the 45 is not. It&#39;s very easy to pack, but it&#39;s ridiculously large and bulky when filled--you can&#39;t even carry it as a duffel easily because of how heavy/large it is. There&#39;s also no good place to put a laptop, which means the laptop ends up taking up a lot of the space because you have to pack around it.
+&lt;/p&gt;
+&lt;h4&gt;
+    Tom Bihn Synik 30
+&lt;/h4&gt;
+&lt;p&gt;
+    In theory, the Synik 30 should be a supercharged version of the Synapse 25. Though it&#39;s ostensibly the height/width as the Synapse 25, it feels and looks a lot larger. It&#39;s also noticeably heavier, probably since it has the added fabric for the luggage pass-through and laptop compartment. Finally, despite its increased size and weight (and price--the Synik is $90 more expensive), I found that I could not pack that much more in the Synik than I could in the Synapse.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -65,9 +240,16 @@ However, the JSON export for notes does have this metadata, so I wrote a small P
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.tomzshen.com/blog/2020/01/this-site/</guid>
-      <description>Update (2020.03.07): This site now uses Hugo. Turns out having to manually sync head tags and nav between multiple pages is no fun. It&amp;rsquo;s crazy fast (compared to Jekyll), but somehow manages to be even more confusing to use.
-This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.
-At first, I was just gonna use Jekyll, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.</description>
+      <description>&lt;p&gt;Update (2020.03.07): This site now uses &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Turns out having to manually sync head tags and nav between multiple pages is no fun. It&amp;rsquo;s crazy fast (compared to Jekyll), but somehow manages to be even more confusing to use.&lt;/p&gt;
+&lt;p&gt;This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.&lt;/p&gt;
+&lt;p&gt;At first, I was just gonna use &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.&lt;/p&gt;
+&lt;p&gt;Next, I considered &lt;a href=&#34;https://www.gatsbyjs.org/&#34;&gt;Gatsby&lt;/a&gt;, but:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Enjoy the power of the latest web technologies – React.js, Webpack, modern JavaScript and CSS and more — all set up and waiting for you to start building.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;sounds exactly like I what I do at work! Maybe once I start fleshing this site out I&amp;rsquo;ll pull in something like Gatsby, but I&amp;rsquo;m having so much more fun just writing everything from scratch.&lt;/p&gt;
+&lt;p&gt;That being said, I will try to mostly write about non-web dev things on this site. Things I&amp;rsquo;m interested in: photography, music (both as a musician and listener), lifting, travel, backpacks, minimalism.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
