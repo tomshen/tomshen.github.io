@@ -6,7 +6,7 @@
     <description>Recent content on Tom Shen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.tomzshen.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,16 @@
       
       <guid>https://www.tomzshen.com/photos/</guid>
       <description> I post phone photos on Instagram.  Here are some photos that I&#39;ve taken:  Kyoto, 2019   Kyoto, 2019   Kyoto, 2019   Tokyo, 2019   Lausanne, 2018   Paris, 2018   Paris, 2018   Tokyo, 2017   Singapore, 2017   Singapore, 2017   Napa, 2017   Nanjing, 2017 </description>
+    </item>
+    
+    <item>
+      <title>Cleaning up Roam Research export metadata</title>
+      <link>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</guid>
+      <description>Roam Research allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.
+However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.</description>
     </item>
     
     <item>

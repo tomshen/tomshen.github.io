@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Tom Shen — Cleaning up Roam Research export metadata</title>
+
+
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/css/index.css"><body><header><a href="/">Tom Shen</a></header><main>
+<article>
+    <header>Cleaning up Roam Research export metadata</header>
+    
+    <time datetime="2020-07-18T00:00:00Z">2020.07.18</time>
+    
+    <div>
+        <p><a href="https://roamresearch.com/">Roam Research</a> allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.</p>
+<p>However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">Use Roam Research JSON export metadata to set the correct file metadata on Roam
+</span><span style="color:#e6db74">Research Markdown export files.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Usage
+</span><span style="color:#e6db74">  ./roam-export.py $EXPORT_JSON_FILE $EXPORT_MARKDOWN_DIRECTORY
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+<span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_roam_export</span>(export_json_filename, export_markdown_folder):
+    export_data <span style="color:#f92672">=</span> import_export_json(export_json_filename)
+
+    <span style="color:#66d9ef">for</span> note_data <span style="color:#f92672">in</span> export_data:
+        set_note_file_metadata(
+            os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(export_markdown_folder, note_data[<span style="color:#e6db74">&#39;title&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.md&#34;</span>),
+            note_data)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">import_export_json</span>(export_json_filename):
+    <span style="color:#66d9ef">with</span> open(export_json_filename) <span style="color:#66d9ef">as</span> f:
+        <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>load(f)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_note_file_metadata</span>(note_markdown_filename, note_data):
+    note_file_stat <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>stat(note_markdown_filename)
+    edit_time <span style="color:#f92672">=</span> note_data[<span style="color:#e6db74">&#39;edit-time&#39;</span>] <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>
+    os<span style="color:#f92672">.</span>utime(note_markdown_filename, (edit_time, edit_time))
+    <span style="color:#66d9ef">print</span>(
+        <span style="color:#e6db74">&#39;Setting modification date of&#39;</span>,
+        <span style="color:#e6db74">&#39;&#34;&#39;</span> <span style="color:#f92672">+</span> note_data[<span style="color:#e6db74">&#39;title&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34;&#39;</span>,
+        <span style="color:#e6db74">&#39;to&#39;</span>,
+        datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>fromtimestamp(edit_time)) 
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    process_roam_export(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>], sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">2</span>])
+</code></pre></div>
+    </div>
+</article>
+
+        </main><script src="/js/index.js"></script></body>
+</html>

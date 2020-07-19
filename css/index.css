@@ -37,6 +37,10 @@ q:after {
     content: '”';
 }
 
+pre {
+    overflow-x: auto;
+}
+
 blockquote {
     font-style: italic;
 }
@@ -106,6 +110,10 @@ img.fullscreen {
 .post-list {
     list-style: none;
     padding-left: 0;
+}
+
+.post-list time {
+    font-family: monospace;
 }
 
 .post-list > li + li {
