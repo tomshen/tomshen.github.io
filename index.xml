@@ -19,7 +19,7 @@
       <guid>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.&lt;/p&gt;
 &lt;p&gt;However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Use Roam Research JSON export metadata to set the correct file metadata on Roam
 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Research Markdown export files.
 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
@@ -48,7 +48,7 @@
     note_file_stat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stat(note_markdown_filename)
     edit_time &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;edit-time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
     os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;utime(note_markdown_filename, (edit_time, edit_time))
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(
+    print(
         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Setting modification date of&amp;#39;&lt;/span&gt;,
         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;,
         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;,

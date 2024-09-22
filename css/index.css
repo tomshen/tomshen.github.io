@@ -25,6 +25,11 @@ a:hover {
     color: #238e5a;
 }
 
+figure {
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+}
+
 img {
     max-width: 100%;
 }

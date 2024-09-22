@@ -1,46 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.tomzshen.com/photos/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/2020/03/notes-on-the-death-and-life-of-great-american-cities/</loc>
     <lastmod>2020-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/2020/01/backpacks/</loc>
     <lastmod>2020-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.tomzshen.com/blog/2020/01/this-site/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
-  
 </urlset>

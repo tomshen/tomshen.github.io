@@ -6,11 +6,7 @@
     <description>Recent content on Tom Shen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.tomzshen.com/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tomzshen.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cleaning up Roam Research export metadata</title>
       <link>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</link>
