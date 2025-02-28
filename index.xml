@@ -19,44 +19,44 @@
       <guid>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.&lt;/p&gt;
 &lt;p&gt;However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Use Roam Research JSON export metadata to set the correct file metadata on Roam
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Research Markdown export files.
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Usage
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  ./roam-export.py $EXPORT_JSON_FILE $EXPORT_MARKDOWN_DIRECTORY
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; json
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;process_roam_export&lt;/span&gt;(export_json_filename, export_markdown_folder):
-    export_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; import_export_json(export_json_filename)
-
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; note_data &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; export_data:
-        set_note_file_metadata(
-            os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(export_markdown_folder, note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;),
-            note_data)
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;import_export_json&lt;/span&gt;(export_json_filename):
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(export_json_filename) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; json&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;load(f)
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;set_note_file_metadata&lt;/span&gt;(note_markdown_filename, note_data):
-    note_file_stat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stat(note_markdown_filename)
-    edit_time &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;edit-time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
-    os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;utime(note_markdown_filename, (edit_time, edit_time))
-    print(
-        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Setting modification date of&amp;#39;&lt;/span&gt;,
-        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; note_data[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;,
-        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;,
-        datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;date&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fromtimestamp(edit_time)) 
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
-    process_roam_export(sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;], sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;])
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;Use Roam Research JSON export metadata to set the correct file metadata on Roam
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;Research Markdown export files.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;Usage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;  ./roam-export.py $EXPORT_JSON_FILE $EXPORT_MARKDOWN_DIRECTORY
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; datetime
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; sys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;process_roam_export&lt;/span&gt;(export_json_filename, export_markdown_folder):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    export_data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; import_export_json(export_json_filename)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; note_data &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; export_data:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        set_note_file_metadata(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            os&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;join(export_markdown_folder, note_data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            note_data)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;import_export_json&lt;/span&gt;(export_json_filename):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;open&lt;/span&gt;(export_json_filename) &lt;span style=&#34;color:#ff79c6&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; json&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;load(f)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;set_note_file_metadata&lt;/span&gt;(note_markdown_filename, note_data):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    note_file_stat &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;stat(note_markdown_filename)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    edit_time &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; note_data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;edit-time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    os&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;utime(note_markdown_filename, (edit_time, edit_time))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Setting modification date of&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; note_data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        datetime&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;date&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;fromtimestamp(edit_time)) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    process_roam_export(sys&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;], sys&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
