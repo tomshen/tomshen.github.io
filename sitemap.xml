@@ -6,9 +6,11 @@
   </url><url>
     <loc>https://www.tomzshen.com/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://www.tomzshen.com/blog/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
@@ -24,5 +26,9 @@
   </url><url>
     <loc>https://www.tomzshen.com/blog/2020/01/this-site/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tomzshen.com/categories/</loc>
+  </url><url>
+    <loc>https://www.tomzshen.com/tags/</loc>
   </url>
 </urlset>

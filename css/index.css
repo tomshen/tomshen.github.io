@@ -1,5 +1,20 @@
+:root {
+    --background-color: white;
+    --text-color: #222;
+
+    --backdrop-color: rgba(30, 30, 30, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: black;
+        --text-color: #DDD;
+    }
+}
+
 body {
-    color: #222;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: -apple-system, sans-serif;
     margin: 0 auto;
     max-width: 800px;
@@ -17,7 +32,7 @@ p {
 
 a,
 a:visited {
-    color: black;
+    color: var(--text-color);
 }
 
 a:active,
@@ -108,7 +123,7 @@ img.fullscreen {
 }
 
 .backdrop {
-    background: rgba(30, 30, 30, 0.9);
+    background: var(--backdrop-color);
 
     z-index: 1;
 
@@ -137,4 +152,3 @@ img.fullscreen {
     display: inline-block;
     width: 100px;
 }
-
