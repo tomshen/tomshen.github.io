@@ -4,58 +4,44 @@
     <title>Tom Shen</title>
     <link>https://www.tomzshen.com/blog/</link>
     <description>Recent content on Tom Shen</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tomzshen.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.tomzshen.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cleaning up Roam Research export metadata</title>
       <link>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.tomzshen.com/blog/2020/07/cleaning-up-roam-research-export-metadata/</guid>
-      <description>Roam Research allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.
-However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; allows you to easily export your notes, but the file metadata on the exported Markdown files is set to the current server time. This can be an issue if, for example, you import them into other note-taking applications that sort notes by modification date.&lt;/p&gt;&#xA;&lt;p&gt;However, the JSON export for notes does have this metadata, so I wrote a small Python script that would allow me to use the metadata from the JSON export while still using the Markdown exported files instead of having to format them myself.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Removing DRM from Amazon Kindle ebooks</title>
       <link>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.tomzshen.com/blog/2020/04/removing-drm-from-amazon-kindle-ebooks/</guid>
-      <description>These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.
- Install Calibre. Calibre will be used to view the de-DRMed ebook and convert to other formats. Install the DeDRM Calibre plugin. This will be used to actually break the DRM on the ebooks. Install Kindle.app. Run sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.</description>
+      <description>&lt;p&gt;These instructions should work and have been tested on macOS Catalina 10.15.4 and Kindle.app 1.28.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Install &lt;a href=&#34;https://calibre-ebook.com/&#34;&gt;Calibre&lt;/a&gt;. Calibre will be used to view the de-DRMed ebook and convert to other formats.&lt;/li&gt;&#xA;&lt;li&gt;Install the &lt;a href=&#34;https://github.com/apprenticeharper/DeDRM_tools&#34;&gt;DeDRM Calibre plugin&lt;/a&gt;. This will be used to actually break the DRM on the ebooks.&lt;/li&gt;&#xA;&lt;li&gt;Install &lt;a href=&#34;https://apps.apple.com/us/app/kindle/id405399194&#34;&gt;Kindle.app&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Run &lt;code&gt;sudo chmod -x /Applications/Kindle.app/Contents/MacOS/renderer-test&lt;/code&gt; in the terminal. This forces Kindle.app to download ebooks in an older format, which is necessary for the DeDRM plugin to work.&lt;/li&gt;&#xA;&lt;li&gt;Download an ebook via Kindle.app.&lt;/li&gt;&#xA;&lt;li&gt;Locate the &lt;code&gt;.azw&lt;/code&gt; file for the ebook inside of &lt;code&gt;~/Library/Containers/com.amazon.Kindle/Data/Library/Application\ Support/Kindle/My\ Kindle\ Content&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Import this ebook file into Calibre. The ebook should now be viewable and convertable.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Notes on The Death and Life of Great American Cities</title>
       <link>https://www.tomzshen.com/blog/2020/03/notes-on-the-death-and-life-of-great-american-cities/</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.tomzshen.com/blog/2020/03/notes-on-the-death-and-life-of-great-american-cities/</guid>
-      <description>Disclaimer: this is feature complete, but needs revision.
- The Death and Life of Great American Cities (1961) by Jane Jacobs  The Peculiar Nature of Cities What makes neighborhoods safe and unsafe? The answer is generally not the presence of police (a neighborhood where you frequently see police officers is certainly not a safe neighborhood). Instead, neighborhoods depend on having people watching the street. These people can be hired (e.</description>
+      <description>&lt;p&gt;Disclaimer: this is &lt;q&gt;feature complete,&lt;/q&gt; but needs revision.&lt;/p&gt;&#xA;&lt;figure&gt;&#xA;    &lt;img src=&#34;https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474660820l/18191035._SY475_.jpg&#34; alt=&#34;The Death and Life of Great American Cities&#34;&gt;&#xA;    &lt;figcaption&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/18191035-the-death-and-life-of-great-american-cities&#34;&gt;&lt;cite&gt;The Death and Life of Great American Cities&lt;/cite&gt;&lt;/a&gt; (1961) by Jane Jacobs&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;h1 id=&#34;the-peculiar-nature-of-cities&#34;&gt;The Peculiar Nature of Cities&lt;/h1&gt;&#xA;&lt;p&gt;What makes neighborhoods safe and unsafe? The answer is generally not the presence of police (a neighborhood where you frequently see police officers is certainly not a safe neighborhood). Instead, neighborhoods depend on having people watching the street. These people can be hired (e.g. doormen), or they can be people who run or work at businesses on the street (e.g. owners/workers at bodegas that are open all night long), or they can be people who live in the neighborhood and, critically, are interested in watching the street.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Backpacks</title>
       <link>https://www.tomzshen.com/blog/2020/01/backpacks/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.tomzshen.com/blog/2020/01/backpacks/</guid>
-      <description>(Disclaimer: this is an unedited rough draft.)  I promised to not write about backpacks, but here we are. Let&#39;s just get all of this out of my system now so that I never have to write about backpacks again. I&#39;m going to talk about backpacks that I use, backpacks that I recommend, and backpacks that I do not.  I&#39;m mostly interested in bags that are useful for EDC and for one-bag urban travel.</description>
+      <description>&lt;p&gt;&#xA;    (Disclaimer: this is an unedited rough draft.)&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;    I promised to not write about backpacks, but here we are. Let&#39;s just get all of this out of my system now so that I never have to write about backpacks again. I&#39;m going to talk about backpacks that I use, backpacks that I recommend, and backpacks that I do not.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;    I&#39;m mostly interested in bags that are useful for EDC and for one-bag urban travel. There&#39;s definitely a lot of other use cases out there (in particular bags for hiking and other outdoor activities), but I don&#39;t feel like I have enough experience in other areas to talk about them.&#xA;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>This Site</title>
       <link>https://www.tomzshen.com/blog/2020/01/this-site/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.tomzshen.com/blog/2020/01/this-site/</guid>
-      <description>Update (2020.03.07): This site now uses Hugo. Turns out having to manually sync head tags and nav between multiple pages is no fun. It&amp;rsquo;s crazy fast (compared to Jekyll), but somehow manages to be even more confusing to use.
-This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.
-At first, I was just gonna use Jekyll, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.</description>
+      <description>&lt;p&gt;Update (2020.03.07): This site now uses &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Turns out having to manually sync head tags and nav between multiple pages is no fun. It&amp;rsquo;s crazy fast (compared to Jekyll), but somehow manages to be even more confusing to use.&lt;/p&gt;&#xA;&lt;p&gt;This site is an experiment in how far I can get in making a personal site without relying on any build tools/libraries, just using raw HTML/CSS/JavaScript.&lt;/p&gt;&#xA;&lt;p&gt;At first, I was just gonna use &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, as I&amp;rsquo;ve done for previous versions of this site, but when I took a look at the repo for the first time in a few months, I saw there were two libraries that I needed to upgrade to fix security vulnerabilities, and I just could not be bothered.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

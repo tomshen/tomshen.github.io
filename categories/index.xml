@@ -4,7 +4,8 @@
     <title>Categories on Tom Shen</title>
     <link>https://www.tomzshen.com/categories/</link>
     <description>Recent content in Categories on Tom Shen</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.tomzshen.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://www.tomzshen.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
